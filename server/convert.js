@@ -8,7 +8,7 @@ const outputPath = filePath.replace(".mp4", ".wav")
 
 export const convert = () =>
   new Promise((resolve, reject) => {
-    console.log("Convertendo o video...")
+    console.log("Convertendo o vídeo...")
 
     ffmpeg.setFfmpegPath(ffmpegStatic)
     ffmpeg()
@@ -23,13 +23,13 @@ export const convert = () =>
         const audioData = fileDecoded.channelData[0]
         const floatArray = new Float32Array(audioData)
 
-        console.log("Video convertido com sucesso!")
+        console.log("Vídeo convertido com sucesso!")
 
         resolve(floatArray)
         fs.unlinkSync(outputPath)
       })
       .on("error", (error) => {
-        console.log("Erro ao converter o video ", error)
+        console.log("Erro ao converter o vídeo", error)
         reject(error)
       })
       .save(outputPath)

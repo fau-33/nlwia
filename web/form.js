@@ -9,8 +9,9 @@ form.addEventListener("submit", async (event) => {
   content.classList.add("placeholder")
 
   const videoURL = input.value
+
   if (!videoURL.includes("shorts")) {
-    return (content.textContent = "Esse video não parece ser um short")
+    return (content.textContent = "Esse vídeo não parece ser um short.")
   }
 
   const [_, params] = videoURL.split("/shorts/")

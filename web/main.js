@@ -1,4 +1,4 @@
-// js
+// JS
 import "./form.js"
 
 // CSS
